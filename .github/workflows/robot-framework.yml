@@ -35,7 +35,8 @@ jobs:
           run: |
             robot -d results tests
           env:
-            PATH: /usr/bin/google-chrome:$PATH
+            ROBOT_OPTIONS: "--variable BROWSER:headlesschrome"
+          shell: bash
 
         - name: Salvar resultados dos testes
           if: ${{ always() }}
