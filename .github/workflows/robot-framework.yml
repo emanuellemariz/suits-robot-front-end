@@ -21,6 +21,15 @@ jobs:
             pip install robotframework
             pip install robotframework-seleniumlibrary
 
+        - name: Install Google Chrome
+          run: |
+            sudo apt-get update
+            sudo apt-get install -y google-chrome-stable
+  
+        - name: Install ChromeDriver
+          run: |
+            sudo apt-get install -y chromium-chromedriver
+
         - name: Run Robot Framework Tests
           run: |
             robot -d results tests
