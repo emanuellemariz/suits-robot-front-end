@@ -5,7 +5,7 @@ Library    Screenshot
 Resource    ../resources/keywords_gerar_massa.robot
 
 *** Variables ***
-${LOGIN_URL}    https://automacao.qacoders-academy.com.br/login
+${LOGIN_URL}    https://automacao.qacoders.dev.br/login
 ${email_admin}    sysadmin@qacoders.com
 ${senha_admin}    1234@Test
 
