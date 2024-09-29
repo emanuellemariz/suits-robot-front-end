@@ -24,7 +24,8 @@ jobs:
         - name: Install Google Chrome
           run: |
             sudo apt-get update
-            sudo apt-get install -y google-chrome-stable
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo dpkg -i google-chrome-stable_current_amd64.deb || sudo apt-get -f install -y
   
         - name: Install ChromeDriver
           run: |
@@ -33,6 +34,8 @@ jobs:
         - name: Run Robot Framework Tests
           run: |
             robot -d results tests
+          env:
+            PATH: /usr/bin/google-chrome:$PATH
 
         - name: Salvar resultados dos testes
           if: ${{ always() }}
