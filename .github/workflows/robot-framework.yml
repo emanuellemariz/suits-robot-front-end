@@ -30,9 +30,13 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
   
+        - name: Verify webdriver-manager installation
+          run: |
+            pip show webdriver-manager || echo "webdriver-manager not found"
+            python3 -m pip install webdriver-manager  # Tentativa explícita de instalação do webdriver-manager
+  
         - name: Setup ChromeDriver using webdriver-manager
           run: |
-            python3 -m pip install --upgrade pip  # Certifique-se de que o pip está atualizado
             python3 -c "from webdriver_manager.chrome import ChromeDriverManager; ChromeDriverManager().install()"
   
 
