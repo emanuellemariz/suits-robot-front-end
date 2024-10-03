@@ -44,6 +44,7 @@ jobs:
             robot -d results tests
           env:
             CHROME_BIN: /usr/bin/google-chrome
+            ROBOT_OPTIONS: "--variable BROWSER:headlesschrome --variable CHROME_OPTS:--no-sandbox --variable CHROME_OPTS:--disable-dev-shm-usage --variable CHROME_OPTS:--disable-gpu"
           shell: bash
 
         - name: Salvar resultados dos testes
