@@ -44,7 +44,6 @@ jobs:
             robot -d results tests
           env:
             CHROME_BIN: /usr/bin/google-chrome
-            ROBOT_OPTIONS: "--variable BROWSER:headlesschrome"
           shell: bash
 
         - name: Salvar resultados dos testes
