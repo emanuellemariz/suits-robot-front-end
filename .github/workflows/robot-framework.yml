@@ -30,9 +30,11 @@ jobs:
             sudo apt-get update
             sudo apt-get install -y google-chrome-stable
   
-        - name: Install ChromeDriver
+        - name: Install ChromeDriver (matching Google Chrome version)
           run: |
-            sudo apt-get install -y chromium-chromedriver
+            CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+') \
+            && wget -N https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip \
+            && unzip chromedriver_linux64.zip -d /usr/local/bin/
 
         - name: Verify Chrome Installation
           run: |
