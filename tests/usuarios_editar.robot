@@ -6,10 +6,10 @@ Test Teardown    Teardown
 
 *** Test Cases ***
 
-# Validar paginação de 50 usuários
-#     Clicar em Cadastros
-#     Clicar em Usuários
-#     Verificar que a paginação tem 50 registros
+Validar paginação de 50 usuários
+    Clicar em Cadastros
+    Clicar em Usuários
+    Verificar que a paginação tem 50 registros
 
 Validar funcionamento do botão para Novo registro
     Clicar em Cadastros

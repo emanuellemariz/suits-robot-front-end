@@ -3,6 +3,7 @@ Library        SeleniumLibrary
 Library    Screenshot
 
 *** Variables ***
+${headlesschrome}    headlesschrome
 ${LOGIN_URL}    https://automacao.qacoders.dev.br/login
 ${email_admin}    sysadmin@qacoders.com
 ${senha_admin}    1234@Test
@@ -21,7 +22,7 @@ ${timeout}    5
 
 *** Keywords ***
 Logar no sistema como Admin 
-    Open Browser    browser=Chrome
+    Open Browser    ${headlesschrome}
     Maximize Browser Window
     Go To    url=${LOGIN_URL}
     Wait Until Element Is Visible    locator=${email_INPUT}    timeout=${timeout}
