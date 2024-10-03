@@ -1,5 +1,5 @@
 *** Settings ***
-Resource        ../resources/usuarios.resource
+Resource        ../resources/usuarios_editar.resource
 
 Test Setup    Logar no sistema como Admin
 Test Teardown    Teardown
