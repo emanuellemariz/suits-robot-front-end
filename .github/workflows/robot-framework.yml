@@ -32,10 +32,11 @@ jobs:
   
         - name: Install ChromeDriver (matching Google Chrome version)
           run: |
-            CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+') \
+            CHROME_VERSION=$(google-chrome --version | grep -oP '\d+\.\d+\.\d+' | head -n 1 | cut -d '.' -f 1,2,3) \
+            && echo "Chrome version: $CHROME_VERSION" \
             && wget -N https://chromedriver.storage.googleapis.com/${CHROME_VERSION}/chromedriver_linux64.zip \
             && unzip chromedriver_linux64.zip -d /usr/local/bin/
-
+            
         - name: Verify Chrome Installation
           run: |
             which google-chrome
