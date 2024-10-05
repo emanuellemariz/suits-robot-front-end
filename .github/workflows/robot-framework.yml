@@ -7,6 +7,14 @@ jobs:
         name: Run Tests
         runs-on: ubuntu-latest
 
+        permissions:
+          contents: read
+          pages: write
+          id-token: write
+        environment:
+          name: github-pages
+          url: https://emanuellemariz.github.io/qa.coders-robot-front-end/report.html
+
         steps:
         - name: Checkout Repository
           uses: actions/checkout@v2
@@ -32,4 +40,16 @@ jobs:
           with:
             name: robot-results
             path: ./results
+
+        - name: Setup Pages
+          uses: actions/configure-pages/@v2
+
+        - name: Upload Artifact
+          uses: actions/upload-pages-artifact@v1
+          with:
+            path: results/
+
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v1
     
