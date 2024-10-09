@@ -4,7 +4,7 @@ on: push
 
 jobs:
     test:
-        name: Run Tests
+        name: Testes Front-end
         runs-on: ubuntu-latest
 
         permissions:
@@ -13,7 +13,7 @@ jobs:
           id-token: write
         environment:
           name: github-pages
-          url: https://emanuellemariz.github.io/qa.coders-robot-front-end/report.html
+          url: https://emanuellemariz.github.io/suits-robot-front-end/report.html
 
         steps:
         - name: Checkout Repository
