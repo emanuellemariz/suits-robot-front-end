@@ -20,7 +20,6 @@ Logar com campo Senha vazio
     Preencher campos    ${email_INPUT}    ${email_admin}
     Clicar no botão    ${enviar_BUTTON}
     Visualizar a mensagem de erro    ${locatorErro_email/senha}    ${mensagemErro_senha}
-    Capture Page Screenshot
 
 Logar com email incorreto
     Preencher campos    ${email_INPUT}    ${email_incorreto}
