@@ -52,4 +52,3 @@ Clicar no botão Novo Cadastro
 
 Visualizar pop-up de Novo Cadastro
     Wait Until Element Is Visible    locator=${popup_TITLE}    timeout=${timeout}
-    Capture Page Screenshot
