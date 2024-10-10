@@ -49,6 +49,7 @@ jobs:
 
       steps:
         - name: Setup Pages
+          if: ${{ always() }}
           uses: actions/configure-pages@v2
 
         - name: Download Artifacts
