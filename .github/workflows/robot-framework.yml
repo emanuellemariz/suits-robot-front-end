@@ -46,22 +46,23 @@ jobs:
       environment:
         name: github-pages
         url: https://emanuellemariz.github.io/suits-robot-front-end/report.html
+
       steps:
-      - name: Setup Pages
-        uses: actions/configure-pages@v2
+        - name: Setup Pages
+          uses: actions/configure-pages@v2
 
-      - name: Download Artifacts
-        uses: actions/download-artifact@v4
-        with: 
-          name: robot-framework-report
-          path: results/
+        - name: Download Artifacts
+          uses: actions/download-artifact@v4
+          with: 
+            name: robot-framework-report
+            path: results/
 
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: results/
+        - name: Upload artifact
+          uses: actions/upload-pages-artifact@v1
+          with:
+            path: results/
 
-      - name: Deploy to Github Pages
-        id: deployment
-        uses: actions/deploy-pages@v1
+        - name: Deploy to Github Pages
+          id: deployment
+          uses: actions/deploy-pages@v1
     
